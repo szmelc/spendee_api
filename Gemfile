@@ -23,6 +23,7 @@ gem 'grape_on_rails_routes'
 gem 'jbuilder', '~> 2.5'
 gem 'jwt'
 gem 'mini_magick', '~> 4.8'
+gem "therubyracer"
 gem 'turbolinks', '~> 5'
 
 group :development, :test do

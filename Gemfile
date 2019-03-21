@@ -21,6 +21,7 @@ gem 'grape-swagger'
 gem 'grape-swagger-rails'
 gem 'grape_on_rails_routes'
 gem 'jbuilder', '~> 2.5'
+gem 'jwt'
 gem 'mini_magick', '~> 4.8'
 gem 'turbolinks', '~> 5'
 

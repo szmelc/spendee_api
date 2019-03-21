@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'grape-swagger'
 
 module API
@@ -9,12 +11,12 @@ module API
 
     mount API::V1::Base
     add_swagger_documentation \
-    mount_path: '/docs',
-    produces: 'application/vnd.api+json',
-    info: {
-      title: 'Spendee API.',
-      contact_name: 'Łukasz Szmelc',
-      contact_email: 'lukasz.szmelc@netguru.co'
-    }
+      mount_path: '/docs',
+      produces: 'application/vnd.api+json',
+      info: {
+        title: 'Spendee API.',
+        contact_name: 'Łukasz Szmelc',
+        contact_email: 'lukasz.szmelc@netguru.co'
+      }
   end
 end

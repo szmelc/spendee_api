@@ -9,7 +9,6 @@ module API
           optional :email, type: String
         end
         post do
-          binding.pry
           data = declared(params)
           render data
         end

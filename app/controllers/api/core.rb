@@ -8,6 +8,24 @@ module API
     format :json
     formatter :json, Grape::Formatter::ActiveModelSerializers
     error_formatter :json, Grape::Formatter::ActiveModelSerializers
+    helpers API::UserHelpers
+    helpers API::ResponseHelpers
+
+    helpers do
+      def permitted_params
+        @permitted_params ||= declared(params,
+                                       include_missing: false)
+      end
+
+      def logger
+        Rails.logger
+      end
+
+      def authorize!
+        unauthorized if !current_user && !current_user.admin?
+        true
+      end
+    end
 
     mount API::V1::Base
     add_swagger_documentation \

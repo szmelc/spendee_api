@@ -22,7 +22,7 @@ module API
       end
 
       def authorize!
-        unauthorized if !current_user && !current_user.admin?
+        unauthorized if !current_user
         true
       end
     end

@@ -16,7 +16,6 @@ module TokenAuthenticatable
   private
 
   def authenticate_user
-    binding.pry
     @current_user = DecodeAuthenticationCommand.call(request.headers).result
     raise NotAuthorizedException unless @current_user
   end

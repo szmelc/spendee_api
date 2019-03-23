@@ -23,12 +23,13 @@ gem 'grape_on_rails_routes'
 gem 'jbuilder', '~> 2.5'
 gem 'jwt'
 gem 'mini_magick', '~> 4.8'
+gem 'rack-cors'
 gem "therubyracer"
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot'
+  gem 'factory_bot_rails', '~> 4.11'
   gem 'pry-rails'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
@@ -38,6 +39,7 @@ group :development do
   gem 'bullet'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
+  gem 'rubocop-rspec'
   gem 'web-console', '>= 3.3.0'
 end
 

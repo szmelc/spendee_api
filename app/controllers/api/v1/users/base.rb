@@ -7,6 +7,10 @@ module API
         mount API::V1::Auth
         resource :users do
           mount Users::Create
+
+          namespace :me do
+            mount Users::Me::Show
+          end
         end
       end
     end

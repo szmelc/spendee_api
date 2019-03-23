@@ -22,7 +22,6 @@ class AuthenticateUserCommand < BaseCommand
     if password_valid?
       @result = JwtService.encode(contents)
     else
-      binding.pry
       errors.add(:base, I18n.t('authenticate_user_command.invalid_credentials'))
     end
   end
@@ -30,6 +29,7 @@ class AuthenticateUserCommand < BaseCommand
   def contents
     {
       user_id: user.id,
+      email: user.email,
       exp: 24.hours.from_now.to_i
     }
   end

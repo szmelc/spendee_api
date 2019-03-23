@@ -9,7 +9,7 @@ module AdminAuthorizable
   end
 
   # :reek:ControlParameter
-  def authorize!(action)
+  def authorize!
     raise NotPermittedException unless action != :read && !current_user.admin?
     true
   end

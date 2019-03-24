@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 module AdminAuthorizable
@@ -11,6 +10,7 @@ module AdminAuthorizable
   # :reek:ControlParameter
   def authorize!
     raise NotPermittedException unless action != :read && !current_user.admin?
+
     true
   end
 end

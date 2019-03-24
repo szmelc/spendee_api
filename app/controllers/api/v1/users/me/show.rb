@@ -7,7 +7,8 @@ module API
         class Show < Base
           desc 'Return current user'
           get '/', serializer: API::V1::Users::Me::UserSerializer do
-            authorize!
+            authenticate!
+            authorize current_user, :me?
             render current_user
           end
         end

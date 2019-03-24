@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 require 'rails_helper'
@@ -17,7 +16,7 @@ RSpec.describe API::V1::Users::Me::Show, type: :request do
 
       context 'authorized' do
         include_context 'authorized', UserPolicy, :me?
-        let(:response_body) { current_user_attributes(user) }
+        let(:response_body) { current_user_attributes(user, API::V1::Users::Me::UserSerializer) }
 
         it_behaves_like '200'
       end

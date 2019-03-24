@@ -1,0 +1,96 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'frontend/**/*'
+    - 'lib/tasks/wordpress_importer/import.rake'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'app/models/active_admin/custom_pundit_adapter.rb'
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/Capfile'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - 'db/seeds.rb'
+  TargetRubyVersion: 2.5
+Metrics/BlockLength:
+  Enabled: false
+Metrics/LineLength:
+  Max: 150
+  Exclude:
+    - 'config/**/*'
+    - 'spec/**/*'
+Metrics/ModuleLength:
+  Enabled: false
+Rails:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+Style/ClassVars:
+  Exclude:
+    - 'spec/**/*'
+Style/Documentation:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - 'spec/**/*'
+Metrics/ClassLength:
+  Max: 200
+  Exclude:
+    - 'app/models/user.rb'
+    - 'app/models/business.rb'
+Metrics/AbcSize:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 10
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'lib/tasks/update_cash_only_businesses.rake'
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+RSpec/LetSetup:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 25
+RSpec/NestedGroups:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ExpectChange:
+  EnforcedStyle: block
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/FilePath:
+  CustomTransform:
+    OAuth: oauth
+    OAuthServices: oauth_services
+    RPush: rpush
+RSpec/ScatteredLet:
+  Exclude:
+    - 'spec/controllers/api/v1/users/reviews/index_spec.rb'
+RSpec/ContextWording:
+  Enabled: false
+RSpec/HookArgument:
+  EnforcedStyle: each
+  Exclude:
+    - 'spec/controllers/api/v1/helpers/jsonapi_helpers_spec.rb'
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/lib/tasks/**/*'

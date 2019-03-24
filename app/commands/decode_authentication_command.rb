@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DecodeAuthenticationCommand < BaseCommand
   private
 
@@ -10,11 +12,12 @@ class DecodeAuthenticationCommand < BaseCommand
 
   def payload
     return unless token_present?
+
     @result = user if user
   end
 
   def user
-    @user ||= User.find_by(id: decoded_id)
+    @user ||= User.find_by(email: decoded_email)
     @user || errors.add(:token, I18n.t('decode_authentication_command.token_invalid')) && nil
   end
 
@@ -24,6 +27,7 @@ class DecodeAuthenticationCommand < BaseCommand
 
   def token
     return authorization_header.split(' ').last if authorization_header.present?
+
     errors.add(:token, I18n.t('decode_authentication_command.token_missing'))
     nil
   end
@@ -40,7 +44,7 @@ class DecodeAuthenticationCommand < BaseCommand
     end
   end
 
-  def decoded_id
-    token_contents['user_id']
+  def decoded_email
+    token_contents['email']
   end
 end

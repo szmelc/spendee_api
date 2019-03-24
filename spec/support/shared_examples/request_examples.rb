@@ -68,14 +68,7 @@ RSpec.shared_examples '401' do
 
   it 'responds with proper body' do
     response_body = {
-      errors: [
-        {
-          title: 'Not authenticated',
-          detail: nil,
-          code: 'not_authenticated',
-          status: 401
-        }
-      ]
+      error: 'Unauthorized'
     }.to_json
     subject
     expect(response.body).to eq(response_body)
@@ -100,21 +93,6 @@ RSpec.shared_examples '404' do
   it 'returns 404 status' do
     subject
     expect(response).to have_http_status(404)
-  end
-
-  it 'responds with proper body' do
-    response_body = {
-      errors: [
-        {
-          title: 'Record not found',
-          detail: nil,
-          code: 'record_not_found',
-          status: 404
-        }
-      ]
-    }.to_json
-    subject
-    expect(response.body).to eq(response_body)
   end
 end
 

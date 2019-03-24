@@ -32,3 +32,5 @@
 en:
   authenticate_user_command:
     invalid_credentials: 'Invalid credentials'
+  decode_authentication_command:
+    token_invalid: 'Invalid token'

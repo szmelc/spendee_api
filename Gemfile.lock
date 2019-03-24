@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/szmelc/ruby-jwt.git
+  revision: 830b18c17a50acbf788036cb4e15cb8ea496e28e
+  specs:
+    jwt (2.2.0.pre.beta.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +57,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     ast (2.4.0)
+    attr_extras (6.2.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -128,7 +135,6 @@ GEM
       multi_json (>= 1.2)
     json (2.2.0)
     jsonapi-renderer (0.2.0)
-    jwt (2.1.0)
     libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -169,6 +175,10 @@ GEM
       pry (>= 0.10.4)
     psych (3.1.0)
     puma (3.12.1)
+    pundit (2.0.1)
+      activesupport (>= 3.0.0)
+    pundit-matchers (1.6.0)
+      rspec-rails (>= 3.0.0)
     rack (2.0.6)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -297,6 +307,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attr_extras
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bullet
@@ -310,12 +321,14 @@ DEPENDENCIES
   grape-swagger-rails
   grape_on_rails_routes
   jbuilder (~> 2.5)
-  jwt
+  jwt!
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
+  pundit
+  pundit-matchers (~> 1.6.0)
   rack-cors
   rails (~> 5.2.2, >= 5.2.2.1)
   rspec-rails

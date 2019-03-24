@@ -7,23 +7,21 @@ module API
     prefix :api
     format :json
     formatter :json, Grape::Formatter::ActiveModelSerializers
-    error_formatter :json, Grape::Formatter::ActiveModelSerializers
     helpers API::UserHelpers
     helpers API::ResponseHelpers
+    rescue_from Pundit::NotAuthorizedError, with: :not_found
 
     helpers do
-      def permitted_params
-        @permitted_params ||= declared(params,
-                                       include_missing: false)
+      def User.permitted_params
+        @permitted_params ||= declared(params, include_missing: false)
       end
 
       def logger
         Rails.logger
       end
 
-      def authorize!
-        unauthorized if !current_user
-        true
+      def authenticate!
+        unauthorized unless current_user
       end
     end
 

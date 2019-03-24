@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe JwtService do
+RSpec.describe JwtService do
   subject { described_class }
 
   let(:payload) { { 'one' => 'two' } }

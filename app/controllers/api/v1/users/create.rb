@@ -6,11 +6,12 @@ module API
       class Create < Base
         desc 'Create a user'
         params do
-          optional :email, type: String
+          requires :email, type: String
+          requires :password, type: String
         end
         post do
           data = declared(params)
-          render data
+          UserServices::Register.call(data.symbolize_keys)
         end
       end
     end

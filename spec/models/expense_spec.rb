@@ -16,5 +16,9 @@ RSpec.describe Expense, type: :model do
     end
   end
 
-  it { is_expected.to belong_to(:user) }
+  describe 'associations' do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_one(:expense_category).dependent(:destroy) }
+    it { is_expected.to have_many(:categories).through(:expense_category) }
+  end
 end

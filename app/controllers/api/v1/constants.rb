@@ -3,7 +3,7 @@
 module API
   module V1
     class Constants
-      CONTENT_TYPE = 'application/vnd.api+json'
+      CONTENT_TYPE = 'application/json'
     end
   end
 end

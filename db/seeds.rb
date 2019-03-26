@@ -1,9 +1,9 @@
-# frozen_string_literal: true
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+p 'Create categories'
+  categories = CSV.read(File.join(Rails.root, "db", "data", "categories.csv"))
+  categories.each do |data|
+    name, ordering = data
+    category = Category.where(name: name).first_or_initialize
+    category.name = name
+    category.ordering = ordering
+    category.save!
+  end

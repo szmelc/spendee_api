@@ -17,8 +17,6 @@ RSpec.describe UserServices::Register do
     end
 
     context 'params are valid' do
-      let(:message) { 'The new user has been successfully created' }
-
       describe 'creates user' do
         it 'increases User count' do
           expect { subject }.to change { User.count }.by(1)

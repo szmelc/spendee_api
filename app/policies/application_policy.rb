@@ -1,3 +1,4 @@
+# TODO: Specs for policies
 # frozen_string_literal: true
 
 class ApplicationPolicy

@@ -11,7 +11,8 @@ module API
         end
         post do
           data = declared(params)
-          UserServices::Register.call(data.symbolize_keys)
+          result = UserServices::Register.call(data.symbolize_keys)
+          render result.data
         end
       end
     end

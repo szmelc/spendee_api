@@ -30,7 +30,7 @@ class AuthenticateUserCommand < BaseCommand
     {
       user_id: user.id,
       email: user.email,
-      exp: 24.hours.from_now.to_i
+      exp: 72.hours.from_now.to_i
     }
   end
 end

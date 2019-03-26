@@ -8,6 +8,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to have_many(:expenses).dependent(:destroy)}
+    it { is_expected.to have_many(:expenses).dependent(:destroy) }
   end
 end

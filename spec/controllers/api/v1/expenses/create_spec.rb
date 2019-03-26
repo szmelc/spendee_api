@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe API::V1::Expenses::Create, type: :request do
   let(:category) { create(:category) }
+
   describe 'POST /api/v1/expenses' do
     subject { post '/api/v1/expenses', headers: headers, params: params.to_json }
 

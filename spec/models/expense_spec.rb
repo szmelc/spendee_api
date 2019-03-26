@@ -14,7 +14,7 @@ RSpec.describe Expense, type: :model do
     context 'when amount is 0' do
       subject { build(:expense, amount: 0) }
 
-      it { is_expected.not_to be_valid }
+      it { is_expected.to_not be_valid }
     end
   end
 

@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe ExpenseServices::Create do
   subject { described_class.call(user, params) }
+
   let!(:category) { create(:category) }
   let!(:user) { create(:user) }
   let(:params) do
@@ -12,7 +13,7 @@ RSpec.describe ExpenseServices::Create do
       currency: 'EUR',
       category_id: category.id,
       description: 'Christmas Grocery Shopping',
-      name: 'Groceries',
+      name: 'Groceries'
     }
   end
 
@@ -33,13 +34,13 @@ RSpec.describe ExpenseServices::Create do
 
       it 'assigns a category to the expense' do
         subject
-        expect(Expense.last.category).not_to be_nil
+        expect(Expense.last.category).to_not be_nil
       end
     end
 
     context 'when params are invalid' do
       context 'when necessary param is missing' do
-        before { params.delete(:amount) }
+        before(:each) { params.delete(:amount) }
 
         it 'raises ActiveRecord::RecordInvalid error' do
           expect { subject }.to raise_error(ActiveRecord::RecordInvalid)

@@ -16,6 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'capistrano-rails', group: :development
 gem 'coffee-rails', '~> 4.2'
+gem 'figaro'
 gem 'grape'
 gem 'grape-active_model_serializers', '~> 1.3.2'
 gem 'grape-swagger'

@@ -22,7 +22,9 @@ Bundler.require(*Rails.groups)
 module SpendeeApi
   class Application < Rails::Application
     config.paths.add File.join('app', 'controllers', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'controllers', 'api', '*')]
+    config.autoload_paths += Dir[
+      Rails.root.join('app', 'controllers', 'api', '*')
+    ]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

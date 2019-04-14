@@ -4,6 +4,7 @@ class Category < ApplicationRecord
   NAMES = %w[TRANSPORT FOOD HEALTH LEISURE CLOTHING BILLS RENT ALCOHOL].freeze
 
   validates :name, presence: true, inclusion: { in: NAMES }
+  validates :color, presence: true
   validates :ordering, numericality: true
 
   has_many :expenses

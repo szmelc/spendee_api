@@ -2,12 +2,11 @@
 
 module API
   module V1
-    module Expenses
+    module Categories
       class Base < Base
         mount API::V1::Auth
-        resource :expenses do
-          mount Expenses::Create
-          mount Expenses::Index
+        resource :categories do
+          mount Categories::Index
         end
       end
     end

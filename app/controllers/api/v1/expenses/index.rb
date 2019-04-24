@@ -18,7 +18,7 @@ module API
           month, year = data[:month], data[:year]
           date = Date.new(year, month)
 
-          expenses = current_user.expenses.includes(:category).where('created_at BETWEEN ? AND ?', date, date.end_of_month).order('created_at desc')
+          expenses = current_user.expenses.all.includes(:category).where('created_at BETWEEN ? AND ?', date, date.end_of_month).order('created_at desc')
           collection = paginate(expenses)
           render collection, render_options(meta_pagination(collection))
         end

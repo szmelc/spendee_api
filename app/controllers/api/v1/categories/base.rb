@@ -7,6 +7,9 @@ module API
         mount API::V1::Auth
         resource :categories do
           mount Categories::Index
+          namespace 'expenses' do
+            mount Categories::Expenses
+          end
         end
       end
     end

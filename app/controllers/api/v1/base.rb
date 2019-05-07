@@ -10,6 +10,7 @@ module API
 
       mount Categories::Base
       mount Expenses::Base
+      mount MonthlyIncomes::Base
       mount Users::Base
     end
   end

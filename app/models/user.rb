@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   has_many :expenses, dependent: :destroy
+  has_many :monthly_incomes, dependent: :destroy
 end

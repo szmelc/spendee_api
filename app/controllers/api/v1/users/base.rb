@@ -10,6 +10,7 @@ module API
 
           namespace :me do
             mount Users::Me::Show
+            mount Users::Me::Update
           end
         end
       end

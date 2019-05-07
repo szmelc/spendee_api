@@ -4,6 +4,5 @@ class CategoryExpensesSerializer < ActiveModel::Serializer
   attributes :id, :dupa
 
   def dupa
-    binding.pry
   end
 end

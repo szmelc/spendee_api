@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_205403) do
+ActiveRecord::Schema.define(version: 2019_05_05_201052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2019_04_24_205403) do
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
+  create_table "monthly_incomes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_monthly_incomes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -42,8 +50,10 @@ ActiveRecord::Schema.define(version: 2019_04_24_205403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total_savings", default: "0.0"
+    t.decimal "predicted_monthly_income", default: "0.0"
   end
 
   add_foreign_key "expenses", "categories"
   add_foreign_key "expenses", "users"
+  add_foreign_key "monthly_incomes", "users"
 end

@@ -14,7 +14,7 @@ module ExpenseServices
 
     def update_user_savings(expense)
       updated_savings = user.total_savings - expense.amount
-      UserServices::Update.call(user, {total_savings: updated_savings})
+      UserServices::Update.call(user, { total_savings: updated_savings })
     end
   end
 end

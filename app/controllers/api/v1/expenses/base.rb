@@ -8,6 +8,9 @@ module API
         resource :expenses do
           mount Expenses::Create
           mount Expenses::Index
+          route_param :year, type: Integer do
+            mount Expenses::Sum
+          end
         end
       end
     end

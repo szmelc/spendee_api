@@ -9,4 +9,8 @@ class ExpensePolicy < ApplicationPolicy
   def create?
     ensured_user_authenticated?
   end
+
+  def sum?
+    ensured_user_authenticated?
+  end  
 end

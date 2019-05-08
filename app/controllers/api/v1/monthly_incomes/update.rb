@@ -14,11 +14,13 @@ module API
             authorize MonthlyIncome, :update?
             data = declared(params)
             date = Date.new(data[:year], data[:month_id])
+
             if income = current_user.monthly_incomes.where('created_at BETWEEN ? AND ?', date, date.end_of_month).first
-              income.update(amount: data[:amount])
+              result = MonthlyIncomeServices::Update.call(current_user, income, params)
             else
-              current_user.monthly_incomes.create(amount: data[:amount])
+              result = MonthlyIncomeServices::Create.call(current_user, income, params)
             end
+            render result.data
           end
         end
       end

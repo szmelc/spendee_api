@@ -10,6 +10,10 @@ class ExpensePolicy < ApplicationPolicy
     ensured_user_authenticated?
   end
 
+  def destroy?
+    ensured_user_authenticated?
+  end  
+
   def sum?
     ensured_user_authenticated?
   end  

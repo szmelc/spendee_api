@@ -7,6 +7,7 @@ module API
         mount API::V1::Auth
         resource :expenses do
           mount Expenses::Create
+          mount Expenses::Destroy
           mount Expenses::Index
           route_param :year, type: Integer do
             mount Expenses::Sum

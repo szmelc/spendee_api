@@ -246,6 +246,8 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     ref (2.0.0)
+    rollbar (2.19.4)
+      multi_json
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -369,6 +371,7 @@ DEPENDENCIES
   pundit-matchers (~> 1.6.0)
   rack-cors
   rails (~> 5.2.2, >= 5.2.2.1)
+  rollbar
   rspec-rails
   rspec_junit_formatter
   rubocop

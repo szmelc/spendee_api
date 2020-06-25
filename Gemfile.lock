@@ -210,7 +210,7 @@ GEM
       activesupport (>= 3.0.0)
     pundit-matchers (1.6.0)
       rspec-rails (>= 3.0.0)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-cors (1.0.3)
